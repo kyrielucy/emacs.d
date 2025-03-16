@@ -84,6 +84,7 @@
 
 (require 'init-editing-utils)
 (require 'init-whitespace)
+(require 'init-clipboard)
 
 (require 'init-vc)
 (require 'init-darcs)
