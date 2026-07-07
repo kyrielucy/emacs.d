@@ -10,7 +10,7 @@
     (with-eval-after-load 'vertico
       (define-key vertico-map (kbd "C-c C-o") 'embark-export)
       (define-key vertico-map (kbd "C-c C-c") 'embark-act)
-      (define-key vertico-map (kbd "C-c C-l") 'embark-collect))
+      (define-key vertico-map (kbd "C-c C-l") 'embark-collect)))
 
   ;; https://github.com/purcell/whole-line-or-region/issues/30#issuecomment-3388095018
   (with-eval-after-load 'embark
