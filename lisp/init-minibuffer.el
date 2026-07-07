@@ -21,6 +21,8 @@
       `(with-eval-after-load 'consult
          (consult-customize ,@cmds :preview-key "M-P")))
 
+    (setq xref-show-xrefs-function 'consult-xref)
+
     (sanityinc/no-consult-preview
      consult-ripgrep
      consult-git-grep consult-grep
