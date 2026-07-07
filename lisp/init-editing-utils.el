@@ -263,6 +263,10 @@ ORIG is the advised function, which is called with its ARGS."
 
 (advice-add 'kmacro-call-macro :around 'sanityinc/disable-features-during-macro-call)
 
+
+(when (maybe-require-package 'expreg)
+  (global-set-key (kbd "C-=") 'expreg-expand)
+  (global-set-key (kbd "C--") 'expreg-contract))
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
