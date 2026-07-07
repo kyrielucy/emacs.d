@@ -16,7 +16,8 @@
           (alist-get 'whole-line-or-region-delete-region
                      embark-around-action-hooks)))
 
-  (when (maybe-require-package 'consult)
+  (when (maybe-require-package 'embark-consult)
+    (require 'embark-consult)
     (defmacro sanityinc/no-consult-preview (&rest cmds)
       `(with-eval-after-load 'consult
          (consult-customize ,@cmds :preview-key "M-P")))
@@ -45,9 +46,7 @@
     (global-set-key [remap switch-to-buffer-other-window] 'consult-buffer-other-window)
     (global-set-key [remap switch-to-buffer-other-frame] 'consult-buffer-other-frame)
     (global-set-key [remap goto-line] 'consult-goto-line)
-
-    (when (maybe-require-package 'embark-consult)
-      (require 'embark-consult))))
+    ))
 
 (when (maybe-require-package 'marginalia)
   (add-hook 'after-init-hook 'marginalia-mode))
