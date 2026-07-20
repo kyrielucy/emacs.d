@@ -177,10 +177,10 @@ typical word processor."
 (setq-default org-agenda-clockreport-parameter-plist '(:link t :maxlevel 3))
 
 
-(let ((active-project-match "-INBOX/PROJECT"))
+(setq org-stuck-projects
+      '("-INBOX/PROJECT" ("NEXT")))
 
-  (setq org-stuck-projects
-        `(,active-project-match ("NEXT")))
+(let ((active-project-match '(car org-stuck-projects)))
 
   (setq org-agenda-compact-blocks t
         org-agenda-sticky t
@@ -188,7 +188,7 @@ typical word processor."
         org-agenda-span 'day
         org-agenda-include-diary nil
         org-agenda-sorting-strategy
-        '((agenda habit-down time-up user-defined-up effort-up category-keep)
+        '((agenda habit-down time-up effort-up category-keep)
           (todo category-up effort-up)
           (tags category-up effort-up)
           (search category-up))

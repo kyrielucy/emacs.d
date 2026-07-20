@@ -7,7 +7,7 @@
 
 ;; TODO: link commits from vc-log to magit-show-commit
 ;; TODO: smerge-mode
-(require-package 'git-modes)
+(maybe-require-package 'git-modes)
 (when (maybe-require-package 'git-timemachine)
   (global-set-key (kbd "C-x v t") 'git-timemachine-toggle))
 
@@ -15,6 +15,7 @@
 
 (when (maybe-require-package 'magit)
   (setq-default magit-diff-refine-hunk 'all)
+  (setq-default magit-diff-visit-prefer-worktree t)
 
   (sanityinc/fullframe-mode 'magit-status-mode)
 
